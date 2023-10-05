@@ -5,34 +5,30 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load Antigen
-source "$HOME/antigen.zsh"
-
-# Load Antigen configurations
-antigen theme romkatv/powerlevel10k
-antigen init ~/.antigenrc
-antigen apply
-
-
-
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
-
+#PATH
+export PATH="$PATH:~/bin"
 
 #change directory without cd
 setopt autocd
 
-#Aliases
-alias python='python3'
-alias pip="python -m pip"
-alias please='sudo $(fc -ln -1)'
+#Antigen
+source /opt/homebrew/share/antigen/antigen.zsh
 
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle agkozak/zsh-z
+antigen bundle ogham/exa
+
+antigen theme romkatv/powerlevel10k
+
+antigen apply
+
+#alias
 alias ls='exa --grid --color auto --icons --sort=type'
-alias la='exa --long --all --color auto --icons --sort=type'
-
-
-
-notify() { wsl-notify-send.exe --category $WSL_DISTRO_NAME "Task completed"; }
+alias ll='exa --long --all --color auto --icons --sort=type'
+alias python='python3'
+alias pip='pip3'
+alias please='sudo $(fc -ln -1)'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
