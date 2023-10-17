@@ -18,10 +18,10 @@ alias python='python3'
 alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
 
-#powerlevel10k
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-
+#fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+#powerlevel10k
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
