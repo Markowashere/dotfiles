@@ -11,24 +11,17 @@ export PATH="$PATH:~/bin"
 #change directory without cd
 setopt autocd
 
-#Antigen
-source /opt/homebrew/share/antigen/antigen.zsh
-
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle agkozak/zsh-z
-antigen bundle ogham/exa
-
-antigen theme romkatv/powerlevel10k
-
-antigen apply
-
-#alias
+#aliases
 alias ls='exa --grid --color auto --icons --sort=type'
 alias ll='exa --long --all --color auto --icons --sort=type'
 alias python='python3'
 alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
+
+#powerlevel10k
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

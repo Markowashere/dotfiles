@@ -1,0 +1,7 @@
+[user]
+	name = Marko Tikkanen
+	email = martikkanen@outlook.fi
+[init]
+    defaultBranch = master
+[core]
+	editor = code --wait
