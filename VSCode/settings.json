@@ -1,4 +1,5 @@
 {
+    "editor.fontSize": 14,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
@@ -6,8 +7,9 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.enabled": false,
     "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true,
+    "editor.mouseWheelScrollSensitivity": 0.45,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "explorer.confirmDelete": false,
@@ -22,5 +24,6 @@
     },
     "files.associations": {
         "*.sql" : "jinja-sql"
-    }
+    },
+    "python.languageServer": "Pylance"
 }

@@ -1,5 +1,5 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
+#tap "homebrew/cask"
 #tap "homebrew/core"
 
 #CLI
@@ -23,7 +23,6 @@ brew "terraform"
 
 #MacOS Tools
 cask "alfred"
-cask "bartender"
 cask "rectangle"
 cask "appcleaner"
 
@@ -38,6 +37,8 @@ cask "firefox"
 cask "slack"
 cask "1password"
 cask "spotify"
+cask "obsidian"
+cask "onedrive"
 
 #Vscode Extension
 vscode "azemoh.one-monokai"
