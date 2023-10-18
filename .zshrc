@@ -9,17 +9,23 @@ fi
 #change directory without cd
 setopt autocd
 
+#fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#zsh-autosuggestions
+[ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#zsh-syntax-highlighting 
+[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#powerlevel10k
+[ -f $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ] && source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 #aliases
 alias ls='exa --grid --color auto --icons --sort=type'
 alias ll='exa --long --all --color auto --icons --sort=type'
 alias python='python3'
 alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
-
-#fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#powerlevel10k
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
