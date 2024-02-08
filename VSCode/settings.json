@@ -1,29 +1,86 @@
 {
+    "editor.accessibilitySupport": "off",
     "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorBlinking": true,
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.minimap.enabled": false,
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 0.45,
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "Cartograph Mono",
+    "editor.rulers": [
+        120
+    ],
     "explorer.confirmDelete": false,
-    "git.autofetch": true,
     "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontFamily": "Cartograph Mono, MesloLGS NF",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "workbench.colorTheme": "Andromeda Bordered",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
+
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "git.autofetch": true,
     "git.confirmSync": false,
+    
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvironment": true,
+    "flake8.severity": {
+        "E": "Error",
+        "F": "Warning",
+        "I": "Information",
+        "W": "Warning"
+    },
+    //black formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "terraform.languageServer.terraform.path": "/opt/homebrew/bin/terraform",
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+      },
+      "[terraform-vars]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+      },
+    //dbt
+    "files.associations": {
+        "*.sql": "jinja-sql",
+        // don't format models in `target/` dir
+        "**/target/**": "",
+    },
+    // Jump to compiled sql from dbt model
+    "findrelated.workspaceRulesets": [
+        {
+            "name": "sql",
+            "rules": [
+                {
+                    "pattern": "^(.*/)?models/(.*/)?(.+\\.sql)$",
+                    "locators": [
+                        "data/target/compiled/**/$3"
+                    ]
+                }
+            ]
+        }
+    ],
+    "findrelated.applyRulesets": [
+        "sql"
+    ],
+    "terminal.external.osxExec": "iTerm.app",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
     "github.copilot.enable": {
         "*": true,
-        "plaintext": true,
+        "plaintext": false,
         "markdown": false,
         "scminput": false
     },
-    "files.associations": {
-        "*.sql" : "jinja-sql"
-    },
-    "python.languageServer": "Pylance"
+    "editor.minimap.enabled": false,
 }

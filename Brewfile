@@ -1,10 +1,10 @@
 tap "homebrew/bundle"
-#tap "homebrew/cask"
+tap "homebrew/cask"
 #tap "homebrew/core"
 
 #CLI
 brew "zsh"
-#brew "tmux"
+brew "tmux"
 brew "git"
 brew "neovim"
 brew "curl"
@@ -13,6 +13,8 @@ brew "ripgrep"
 brew "exa"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "just"
+brew "pyenv"
 brew "fzf"
 brew "powerlevel10k"
 
@@ -29,9 +31,9 @@ cask "appcleaner"
 
 #Dev Tools
 cask "visual-studio-code"
-#cask "datagrip"
+cask "datagrip"
 cask "iterm2"
-#cask "docker"
+cask "docker"
 
 #General Apps
 cask "firefox"

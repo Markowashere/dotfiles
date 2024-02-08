@@ -1,7 +1,19 @@
 [user]
 	name = Marko Tikkanen
-	email = martikkanen@outlook.fi
-[init]
-    defaultBranch = master
+	email = martikkanen@outlook.com
 [core]
 	editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[alias]
+	glog = log --all --decorate --graph --oneline
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
