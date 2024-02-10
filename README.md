@@ -1,8 +1,8 @@
 ## Introduction
 My dotfiles and scripts to init new mac.
 - Installs essentials from Brewfile
-- Renames the local dotfiles by adding postfix .bak.
-- Creates symlinks from repo dotfiles to local locations.
+- Removes local dotfiles
+- Creates symlinks from repo dotfiles to default dotfile paths.
 ## Usage
 - `git clone` to any location
 - `cd dotfiles`
