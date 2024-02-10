@@ -26,4 +26,5 @@ _darcs
 # My custom ignore list
 justfile
 scripts
-.config/nvim-primeagen
+^/Brewfile.lock.json
+^/.config/nvim-primeagen
