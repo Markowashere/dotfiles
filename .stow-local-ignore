@@ -21,7 +21,9 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-# My ignore list
+# ^^^Default ignore list^^^
+# --------------------------
+# My custom ignore list
 justfile
 scripts
 .config/nvim-primeagen
