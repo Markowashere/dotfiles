@@ -1,7 +1,6 @@
 ## Usage
-- `brew install stow`
+- `brew install just stow`
 - `git clone` to any location
 - `cd dotfiles`
-- `stow -t ~/ .`
-## Todo
-- install script
+- `just`
+

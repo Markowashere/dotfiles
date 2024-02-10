@@ -22,4 +22,5 @@ _darcs
 ^/COPYING
 
 # My ignore list
-.justfile
+justfile
+scripts
