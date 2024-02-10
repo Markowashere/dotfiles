@@ -1,9 +1,13 @@
 ## Introduction
-My dotfiles. 
-First renames the local dotfiles by adding postfix .bak. Then creates symlinks from repo dotfiles to local locations.
+My dotfiles and scripts to init new mac.
+- Installs essentials from Brewfile
+- Renames the local dotfiles by adding postfix .bak.
+- Creates symlinks from repo dotfiles to local locations.
 ## Usage
-- `brew install just stow`
 - `git clone` to any location
 - `cd dotfiles`
 - `just`
-
+## Update
+To add new dotfile:
+- Add dotfile to correct path
+- Add path to scripts/init.sh
