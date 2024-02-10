@@ -1,4 +1,3 @@
-# Define a list of file paths
 PATHS=(
     ~/.zshrc
     ~/.p10k.zsh
@@ -10,7 +9,6 @@ PATHS=(
     ~/Library/Application\ Support/Code/User/keybindings.json
 )
 
-# Define a rule to add .bak postfix to file names
 for path in "${PATHS[@]}"; do
     if [ -e "$path" ]; then
         mv "$path" "$path.bak"
