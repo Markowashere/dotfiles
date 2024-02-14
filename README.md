@@ -12,4 +12,5 @@ To add new dotfile:
 - Add dotfile to correct path
 - Add path to scripts/init.sh
 ## Todo
-- Add fzf dotfiles
+- Add iterm2
+- Add fzf
