@@ -11,3 +11,5 @@ My dotfiles and scripts to init new mac.
 To add new dotfile:
 - Add dotfile to correct path
 - Add path to scripts/init.sh
+## Todo
+- Add fzf dotfiles
