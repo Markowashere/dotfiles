@@ -21,6 +21,8 @@ eval "$(zoxide init zsh)"
 
 #fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#fuzzy finder defaults
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 #zsh-autosuggestions
 [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
