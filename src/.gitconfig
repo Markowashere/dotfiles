@@ -15,6 +15,7 @@
   cmd = code --wait $MERGED
 [alias]
   glog = log --all --decorate --graph --oneline
+  cob = !git checkout $(git branch | fzf)
 [push]
   autoSetupRemote = true
 [fetch]
