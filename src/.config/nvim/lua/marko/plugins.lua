@@ -14,10 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "rebelot/kanagawa.nvim",
-        config = function()
-            vim.cmd.colorscheme("kanagawa-wave")
-        end
+        "rose-pine/neovim",
+        name = "rose-pine"
     },
     {
         "nvim-treesitter/nvim-treesitter",
