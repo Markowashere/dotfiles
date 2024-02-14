@@ -28,6 +28,8 @@ vim.opt.ignorecase = true
 
 vim.opt.termguicolors = true
 
+vim.opt.laststatus = 2
+
 vim.cmd [[
     au VimLeave * set guicursor=a:ver10-blinkon1"
 ]]
