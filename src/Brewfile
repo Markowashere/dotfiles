@@ -9,6 +9,7 @@ brew "zsh-syntax-highlighting"
 brew "tmux"
 brew "neovim"
 brew "exa"
+brew "bat"
 brew "fzf"
 brew "powerlevel10k"
 

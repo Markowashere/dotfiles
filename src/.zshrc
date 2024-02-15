@@ -44,6 +44,7 @@ alias python='python3'
 alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
 alias vim="nvim"
+alias cat="bat"
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
