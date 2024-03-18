@@ -5,6 +5,7 @@
   path = .gitconfig-work
 [core]
   editor = code --wait
+  excludesfile = ~/.config/git/.gitignore
 [diff]
   tool = vscode
 [difftool "vscode"]

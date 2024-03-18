@@ -4,6 +4,7 @@ PATHS=(
     ~/Brewfile
     ~/.gitconfig
     ~/.gitconfig-work
+    ~/.config/git/.gitignore
     ~/.config/nvim
     ~/Library/Application\ Support/Code/User/settings.json
     ~/Library/Application\ Support/Code/User/keybindings.json
