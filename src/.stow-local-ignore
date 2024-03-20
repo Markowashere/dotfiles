@@ -12,7 +12,7 @@ _darcs
 \.hg
 
 \.git
-\.gitignore
+#\.gitignore
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
