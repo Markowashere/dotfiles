@@ -48,15 +48,18 @@ alias cat="bat"
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
+alias tg="terragrunt"
+alias tgaa='(z devmarko && terragrunt apply --auto-approve)'
+
 #Path
 export PATH="$PATH:$HOME/bin"
 # Created by `pipx` on 2023-12-05 10:13:57
-export PATH="$PATH:/Users/marko.tikkanen/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/marko.tikkanen/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/marko.tikkanen/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/marko.tikkanen/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/marko.tikkanen/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"

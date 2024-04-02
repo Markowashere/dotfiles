@@ -5,6 +5,7 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true,
     "editor.mouseWheelScrollSensitivity": 0.45,
+    "editor.minimap.enabled": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.fontFamily": "Cartograph Mono",
     "editor.rulers": [
@@ -12,6 +13,9 @@
     ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+
+    "files.insertFinalNewline": true, // Testing if this is good
+
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
@@ -20,13 +24,15 @@
     "workbench.colorTheme": "Andromeda Bordered",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "material-product-icons",
+    "terminal.external.osxExec": "iTerm.app",
 
     "gitlens.currentLine.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "git.autofetch": true,
     "git.confirmSync": false,
-    
+
+    // Python
     "python.languageServer": "Pylance",
     "python.terminal.activateEnvironment": true,
     "flake8.severity": {
@@ -40,6 +46,9 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+
+    // Terraform
     "terraform.languageServer.terraform.path": "/opt/homebrew/bin/terraform",
     "[terraform]": {
         "editor.defaultFormatter": "hashicorp.terraform",
@@ -51,12 +60,26 @@
         "editor.formatOnSave": true,
         "editor.formatOnSaveMode": "file"
       },
-    //dbt
+
+    // sql
+    "sqlfluff.config": "${workspaceFolder}/.sqlfluff",
+    "sqlfluff.format.enabled": true,
+    "sqlfluff.experimental.format.executeInTerminal": true,
+    "sqlfluff.linter.run": "onSave",
+    "[sql]": {
+        "editor.formatOnSave": false
+    },
+    "[jinja-sql]": {
+        "editor.formatOnSave": false
+    },
+
+    // dbt
     "files.associations": {
         "*.sql": "jinja-sql",
         // don't format models in `target/` dir
         "**/target/**": "",
     },
+
     // Jump to compiled sql from dbt model
     "findrelated.workspaceRulesets": [
         {
@@ -74,13 +97,18 @@
     "findrelated.applyRulesets": [
         "sql"
     ],
-    "terminal.external.osxExec": "iTerm.app",
-    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+
+    // YAML
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    // Copilot
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    },
-    "editor.minimap.enabled": false,
+    }
 }
