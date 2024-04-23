@@ -21,12 +21,13 @@ brew "pipx"
 brew "pyenv"
 brew "direnv"
 brew "stow"
+brew "tldr"
 
 #Languages
 brew "python@3.11"
 brew "lua"
-brew "rust"
-brew "terraform"
+# brew "rust"
+# brew "terraform"
 
 #MacOS Tools
 cask "alfred"

@@ -36,7 +36,6 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-
 #aliases
 alias ls='exa --grid --color auto --icons --sort=type'
 alias ll='exa --long --all --color auto --icons --sort=type'
@@ -45,16 +44,31 @@ alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
 alias vim="nvim"
 alias cat="bat"
+
+# d to list previous directories, 1-9 to jump to them
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 alias tg="terragrunt"
-alias tgaa='(z devmarko && terragrunt apply --auto-approve)'
+alias tgaa='(z $(pwd) devmarko && terragrunt apply --auto-approve)'
 
-#Path
+
+# Place to store custom executables
 export PATH="$PATH:$HOME/bin"
+
+# Place to store custom scripts
+for script in ~/scripts/*; do
+  if [ -f "$script" ]; then
+    source "$script"
+  fi
+done
+
+# Automatically generated stuff goes below this line
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # Created by `pipx` on 2023-12-05 10:13:57
 export PATH="$PATH:$HOME/.local/bin"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -65,3 +79,6 @@ if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-clou
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+#snowsql
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql

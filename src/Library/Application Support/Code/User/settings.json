@@ -110,5 +110,7 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "snowflake.snowsqlConfigPath": "~/.snowsql/config",
+    "github.copilot.chat.localeOverride": "en"
 }
