@@ -33,6 +33,8 @@ brew "lua"
 cask "alfred"
 cask "rectangle"
 cask "appcleaner"
+cask "maccy"
+cask "dozer"
 
 #Dev Tools
 cask "visual-studio-code"
