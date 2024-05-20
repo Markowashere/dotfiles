@@ -15,9 +15,19 @@
 [mergetool "vscode"]
   cmd = code --wait $MERGED
 [alias]
-  glog = log --all --decorate --graph --oneline
-  cob = !git checkout $(git branch | fzf)
+  # List available aliases
+  aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+  # Better log
+  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+  # Checkout branch with fuzzy finder
+  cof = !git checkout $(git branch | fzf)
+  # Edit last commit message
+  reword = commit --amend
+  # Undo last commit but keep changed files in stage
+  uncommit = reset --soft HEAD~1
 [push]
   autoSetupRemote = true
 [fetch]
   prune = true
+[color]
+  ui = auto
