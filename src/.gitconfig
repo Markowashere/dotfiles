@@ -17,10 +17,12 @@
 [alias]
   # List available aliases
   aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
-  # Better log
-  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+  # Checkout
+  co = checkout
   # Checkout branch with fuzzy finder
   cof = !git checkout $(git branch | fzf)
+  # Better log
+  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
   # Edit last commit message
   reword = commit --amend
   # Undo last commit but keep changed files in stage
