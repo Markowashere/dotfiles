@@ -1,5 +1,9 @@
 emulate zsh -c "$(direnv export zsh)"
 
+if [ ! -f ~/.op_session ]; then
+  eval $(op signin --raw) > ~/.op_session
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -8,6 +12,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 emulate zsh -c "$(direnv hook zsh)"
+
+source ~/.op_session
 
 #ZSH settings
 setopt HIST_IGNORE_DUPS     # Do not store duplicate entries.
@@ -37,8 +43,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 
 #aliases
-alias ls='exa --grid --color auto --icons --sort=type'
-alias ll='exa --long --all --color auto --icons --sort=type'
+alias ls='lsd'
+alias ll='ls -la'
 alias python='python3'
 alias pip='pip3'
 alias please='sudo $(fc -ln -1)'
