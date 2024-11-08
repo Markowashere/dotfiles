@@ -30,6 +30,8 @@
   reword = commit --amend
   # Undo last commit but keep changed files in stage
   uncommit = reset --soft HEAD~1
+  # Interactive rebase starting from last merge commit
+  rebase-merge = !git rebase -i $(git merge-base HEAD main)
   # Delete already merged branches
   cleanup-merged = !git branch --merged main | grep -v 'main' | xargs -n 1 git branch -d
 [push]
