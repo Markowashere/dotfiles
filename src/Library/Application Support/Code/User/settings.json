@@ -35,6 +35,7 @@
     // Python
     "python.languageServer": "Pylance",
     "python.terminal.activateEnvironment": true,
+    //"python.terminal.executeInFileDir": true,
     "flake8.severity": {
         "E": "Error",
         "F": "Warning",
@@ -49,7 +50,7 @@
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
 
     // Terraform
-    "terraform.languageServer.terraform.path": "/opt/homebrew/bin/terraform",
+    "terraform.languageServer.terraform.path": "/usr/local/bin/terraform",
     "[terraform]": {
         "editor.defaultFormatter": "hashicorp.terraform",
         "editor.formatOnSave": true,
@@ -59,13 +60,10 @@
         "editor.defaultFormatter": "hashicorp.terraform",
         "editor.formatOnSave": true,
         "editor.formatOnSaveMode": "file"
-      },
-
-    // sql
-    "sqlfluff.config": "${workspaceFolder}/.sqlfluff",
-    "sqlfluff.format.enabled": true,
-    "sqlfluff.experimental.format.executeInTerminal": true,
+    },
     "sqlfluff.linter.run": "onSave",
+    "sqlfluff.experimental.format.executeInTerminal": true,
+    "editor.formatOnSave": false,
     "[sql]": {
         "editor.formatOnSave": false
     },
@@ -79,25 +77,6 @@
         // don't format models in `target/` dir
         "**/target/**": "",
     },
-
-    // Jump to compiled sql from dbt model
-    "findrelated.workspaceRulesets": [
-        {
-            "name": "sql",
-            "rules": [
-                {
-                    "pattern": "^(.*/)?models/(.*/)?(.+\\.sql)$",
-                    "locators": [
-                        "data/target/compiled/**/$3"
-                    ]
-                }
-            ]
-        }
-    ],
-    "findrelated.applyRulesets": [
-        "sql"
-    ],
-
     // YAML
     "[yaml]": {
         "editor.insertSpaces": true,
@@ -112,5 +91,26 @@
         "scminput": false
     },
     "snowflake.snowsqlConfigPath": "~/.snowsql/config",
-    "github.copilot.chat.localeOverride": "en"
+    "github.copilot.chat.localeOverride": "en",
+    "gitlens.launchpad.indicator.enabled": false,
+
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "interactiveWindow.executeWithShiftEnter": true,
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": false,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": false,
+        "searchAndCompare": true,
+        "launchpad": false
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.scrollback": 5000,
 }

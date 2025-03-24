@@ -6,6 +6,7 @@ PATHS=(
     ~/.gitconfig-work
     ~/.config/git/.gitignore
     ~/.config/nvim
+    ~/.config/tmux/tmux.conf
     ~/Library/Application\ Support/Code/User/settings.json
     ~/Library/Application\ Support/Code/User/keybindings.json
 )

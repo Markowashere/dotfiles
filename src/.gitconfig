@@ -3,18 +3,44 @@
   name = Marko Tikkanen
 [includeIf "gitdir:~/Developer/"]
   path = .gitconfig-work
+
+[color]
+  ui = auto
 [core]
   editor = code --wait
   excludesfile = ~/.config/git/.gitignore
   autocrlf = input
+# [column]
+#   ui = column
+[branch]
+  sort = -committerdate
 [diff]
   tool = vscode
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[init]
+  defaultBranch = main
 [merge]
   tool = vscode
 [mergetool "vscode"]
   cmd = code --wait $MERGED
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[rebase]
+    autoStash = true
+    updateRefs = true
+[tag]
+  sort = version:refname
 [alias]
   # List available aliases
   aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
@@ -31,15 +57,6 @@
   # Undo last commit but keep changed files in stage
   uncommit = reset --soft HEAD~1
   # Interactive rebase starting from last merge commit
-  rebase-merge = !git rebase -i $(git merge-base HEAD main)
+  rebasem = !git rebase -i $(git merge-base HEAD main)
   # Delete already merged branches
   cleanup-merged = !git branch --merged main | grep -v 'main' | xargs -n 1 git branch -d
-[push]
-  autoSetupRemote = true
-[rebase]
-    autoStash = true
-    updateRefs = true
-[fetch]
-  prune = true
-[color]
-  ui = auto

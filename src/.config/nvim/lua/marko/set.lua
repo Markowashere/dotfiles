@@ -7,6 +7,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.wrap = false
+vim.opt.wrapscan = false
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

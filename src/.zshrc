@@ -1,19 +1,10 @@
-emulate zsh -c "$(direnv export zsh)"
 
-if [ ! -f ~/.op_session ]; then
-  eval $(op signin --raw) > ~/.op_session
-fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-emulate zsh -c "$(direnv hook zsh)"
-
-source ~/.op_session
 
 #ZSH settings
 setopt HIST_IGNORE_DUPS     # Do not store duplicate entries.
@@ -41,24 +32,6 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-#aliases
-alias ls='lsd'
-alias ll='ls -la'
-alias python='python3'
-alias pip='pip3'
-alias please='sudo $(fc -ln -1)'
-alias vim="nvim"
-alias cat="bat"
-
-# d to list previous directories, 1-9 to jump to them
-alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
-alias tg="terragrunt"
-alias tgaa='(z $(pwd) devmarko && terragrunt apply --auto-approve)'
-
-
 # Place to store custom executables
 export PATH="$PATH:$HOME/bin"
 
@@ -68,6 +41,21 @@ for script in ~/scripts/*; do
     source "$script"
   fi
 done
+
+# Load credentials
+if [ -f ~/.credentials ]; then
+    source ~/.credentials
+fi
+
+# Load aliases
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
+# Load AWS login credentials
+if [ -f ~/.aws/credentials_env ]; then
+    source ~/.aws/credentials_env
+fi
 
 # Automatically generated stuff goes below this line
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,3 +76,7 @@ eval "$(pyenv init -)"
 
 #snowsql
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+
+emulate zsh -c "$(direnv export zsh)"
+
+emulate zsh -c "$(direnv hook zsh)"
